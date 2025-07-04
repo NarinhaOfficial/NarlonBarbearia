@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Narlon Barbearia</title>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/logo6.png" alt="">
+        <h1 id="negocio">Narlon Barbearia</h1>
+        <nav id="caixa-menu">
+            <ul id="menu">
+                <li class="itens-menu"><a href="index.html">início</a></li>
+                <li class="itens-menu"><a href="#sobre">Sobre</a></li>
+                <li class="itens-menu"><a href="#servicos">Serviços</a></li>
+                <li class="itens-menu"><a href="#agendamento">agendamento</a></li>
+                <li class="itens-menu"><a href="#localizacao">localização</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="sobre">
+            <h2>sobre</h2>
+            <div>
+                <img src="assets/sobre.jpg" alt="Banner da Barbearia Narlon">
+                <p>Desde 2025, a Narlon tem sido mais do que um lugar para cortar cabelo e fazer a barba; é um refúgio
+                    para o homem moderno que valoriza a tradição, a precisão e o cuidado artesanal. Nascemos da paixão
+                    por transformar o ato de se cuidar em uma experiência única e revigorante. <br><br>
+
+                    Aqui, cada corte é uma obra de arte, cada barba é esculpida com maestria e cada cliente é tratado
+                    com a atenção que merece. Nossa equipe de barbeiros experientes une o conhecimento clássico às
+                    tendências contemporâneas, garantindo um resultado impecável que realça seu estilo. <br><br>
+
+                    Venha nos visitar e descubra por que somos referência em Caxias/MA. Na Narlon, você encontra o
+                    equilíbrio perfeito entre o legado da barbearia e a inovação que o seu visual pede.</p>
+            </div>
+        </section>
+        <section id="servicos">
+            <h2 id="h2-2">Serviços</h2>
+            <div id="pai">
+                <div id="filho">
+                    <h3>Corte de cabelo</h3>
+                    <img src="assets/corte.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Barba</h3>
+                    <img src="assets/barba.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Design de sobrancelhas</h3>
+                    <img src="assets/sombrancelha.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Tratamentos capilares</h3>
+                    <img src="assets/tratamento-capilar.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Pacotes especiais</h3>
+                    <img src="assets/tudo.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="agendamento">
+            <h2>Agendamento</h2>
+            <div id="caixa-agendamento">
+                <div id="horario">
+                    <h2 id="h2-dentro">Horário de Funcionamento</h2>
+                    <ul>
+                        <li class="dias">Segunda a Sexta:
+                            <ul class="horario-semana">
+                                <li>08:00 - 12:00</li>
+                                <li>14:00 - 18:00</li>
+                                <br>
+                            </ul>
+                        </li>
+                        <li class="dias">Sábado:
+                            <ul class="horario-semana">
+                                <li>08:00 - 12:00</li>
+                                <br>
+                            </ul>
+                        </li>
+                        <li class="dias">Domingo:
+                            <ul class="horario-semana">
+                                <li>Fechado</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <form name="loginForm" id="loginForm" autocomplete="on">
+                    <h2 id="h2-dentro">Agende seu horário</h2>
+                    <div id="caixa-login">
+                        <input id="loginEmail" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="loginPassword" type="password" name="senha" placeholder="Digite sua senha" required>
+                        <br>
+                        <a href="">Esqueceu a senha?</a>
+                        <br>
+                        <button id="entrar" type="submit">Entrar</button>
+                        <br>
+                        <label>Não tem uma conta?</label> <a href="cadastro/cadastro.html">Cadastre-se</a>
+                    </div>
+                    <p id="mensagemLogin" style="text-align: center; margin-top: 10px;"></p>
+                </form>
+            </div>
+
+        </section>
+        <h2>Localização</h2>
+        <section id="localizacao">
+            <p>Tv. da União, 394 - Ponte, Caxias - MA</p> <br>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.3512192140615!2d-43.369007726133134!3d-4.880711595095048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e93ce185fc089%3A0x90de0f856d49e133!2sBarbearia%20do%20shekau!5e0!3m2!1spt-BR!2sbr!4v1751038889817!5m2!1spt-BR!2sbr"
+                width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+    <footer>
+        &copy; Desenvolvido por Narinha Official
+        <br>
+        narinhaofficial@gmail.com
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

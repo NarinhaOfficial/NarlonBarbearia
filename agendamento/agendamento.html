@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+
+<body>
+    <section id="agendamento">
+        <button id="sair" type="submit">sair</button>
+        <h2>Agende seu horário</h2>
+        <h3>Manhã: 8h - 12h<br><br>Tarde: 14h - 18h<br><br>Sábado: 8h - 14h</h3>
+
+        <label for="calendario">Escolha a data:</label>
+        <input type="text" id="calendario" placeholder="Clique para escolher a data" readonly>
+
+        <label for="horario">Escolha o horário:</label>
+        <select id="horario" disabled>
+            <option>Selecione uma data primeiro</option>
+        </select>
+
+        <button onclick="confirmarAgendamento()">Confirmar</button>
+        <p id="mensagem"></p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#calendario", {
+            dateFormat: "Y-m-d",
+            locale: "pt",
+            minDate: "today",
+            disable: [
+                function (date) {
+                    return date.getDay() === 0;
+                }
+            ],
+            onChange: function (selectedDates, dateStr) {
+                const dataSelecionada = new Date(dateStr);
+                const diaSemana = dataSelecionada.getDay();
+                const horarioSelect = document.getElementById("horario");
+
+                horarioSelect.innerHTML = "";
+                horarioSelect.disabled = false;
+
+                let horarios = [];
+
+                if (diaSemana >= 1 && diaSemana <= 5) {
+                    horarios = gerarHorarios("08:00", "12:00").concat(gerarHorarios("14:00", "18:00"));
+                } else if (diaSemana === 6) {
+                    horarios = gerarHorarios("08:00", "14:00");
+                }
+
+                horarios.forEach(horario => {
+                    const option = document.createElement("option");
+                    option.value = horario;
+                    option.textContent = horario;
+                    horarioSelect.appendChild(option);
+                });
+            }
+        });
+
+        function gerarHorarios(inicio, fim) {
+            const horarios = [];
+            let [h, m] = inicio.split(":").map(Number);
+            const [hf, mf] = fim.split(":").map(Number);
+
+            while (h < hf || (h === hf && m < mf)) {
+                const horaFormatada = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+                horarios.push(horaFormatada);
+
+                m += 30;
+                if (m >= 60) {
+                    m = 0;
+                    h++;
+                }
+            }
+
+            return horarios;
+        }
+
+        function confirmarAgendamento() {
+            const data = document.getElementById("calendario").value;
+            const hora = document.getElementById("horario").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (!data || !hora) {
+                mensagem.textContent = "Escolha uma data e horário.";
+                mensagem.style.color = "red";
+                return;
+            }
+
+            mensagem.textContent = `Agendamento confirmado para ${data} às ${hora}.`;
+            mensagem.style.color = "green";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+            /* Para o header */
+header {
+    background-color: #333;
+    color: white;
+    min-height: 200px;
+    text-align: center;
+    display: flex;
+}
+#logo {
+    align-self: center;
+    height: 200px;
+    padding-left: 30px;
+    z-index: 1;
+}
+#negocio {
+    align-self: center;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+#caixa-menu {
+    position: fixed;
+    background-color: #333;
+    width: 100%;
+    top: 0;
+
+}
+#menu{
+    display: flex;
+    align-items: space-between;
+    justify-content: end;
+    list-style: none;
+}
+.itens-menu a {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.itens-menu:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+.itens-menu:hover a {
+    color: #333;
+}
+
+            /* Agora vamos para o main */
+main {
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+    padding: 60px 0 30px 0;
+}
+/* seção do sobre */
+#sobre div{
+    display: flex;
+    padding-bottom: 30px;
+}
+
+#sobre img {
+    height: 280px
+    /* object-fit: cover; */
+}
+#sobre p {
+    padding: 0 10px 0 10px;
+    font-size: 1.1em;
+    align-items: center;
+    align-self: center;
+    text-align: justify; 
+}
+/* Seção de serviços */
+#h2-2{
+    color: white;
+}
+#servicos {
+   
+    background: #333;
+    color: white;
+    min-height: 290px;
+}
+#pai{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+#servicos img{
+    height: 170px;
+    padding-top: 10px;
+}
+                /* Seção de Agendamentos */
+#agendamento {
+    background-color: rgb(240, 101, 101);
+    color: white;
+}
+#h2-dentro {
+    padding: 0 0 20px 0;
+}
+#caixa-agendamento {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+}
+/* Parte da esquerda */
+#horario {
+    width: 50%;    
+}
+#horario ul{
+    justify-items: center;
+    list-style: none;
+    font-size: 20px;
+}
+#horario .dias{
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+#horario .dias .horario-semana{
+    color: #333;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* Parte da direita */
+form {
+    margin-left: auto;
+    width: 50%;
+}
+form h2{
+    text-align: center;
+}
+#caixa-login{
+    font-size: 20px;
+}
+input{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#entrar{
+    background-color: #333;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+/* Seção de Contato */
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
